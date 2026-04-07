@@ -9,9 +9,17 @@ def main(): Unit = {
 
   val items = List(itemAxiom, itemBravos, itemLyra, itemMuna, itemOrdis, itemYzmir)
 
-  val order = new Order(orderId = "1", items = items, discountCode = Option("order_20"))
+  val orderDiscount20 = new Order(orderId = "1", items = items, discountCode = Option("order_20"))
+  val orderDiscount15 = new Order(orderId = "1", items = items, discountCode = Option("order_15"))
+  val orderDiscount50 = new Order(orderId = "1", items = items, discountCode = Option("order_50"))
 
-  println(s"Sum order : ${calculateTotal(order)}")
-  val orderDiscount = applyDiscount(order, 0.1)
-  println(s"Sum order : ${calculateTotal(orderDiscount)}")
+  println(s"CalculateTotal : ${calculateTotal(orderDiscount20)}")
+
+  val orderDiscount = applyDiscount(orderDiscount20, 0.2)
+  println(s"ApplyDiscount + CalculateTotal : ${calculateTotal(orderDiscount)}")
+
+  println(s"ProcessOrders : " +
+    s"${processOrders(
+      List(orderDiscount20, orderDiscount15, orderDiscount50),
+      Map("order_20" -> 0.2, "order_15" -> 0.15))}")
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ScalaCompilerConfiguration">
-    <option name="separateProdTestSources" value="true" />
-    <profile name="sbt 1" modules="Bloc-2-module-13-programmation-fonctionnelle-scala,Bloc-2-module-13-programmation-fonctionnelle-scala.main,Bloc-2-module-13-programmation-fonctionnelle-scala.test" />
-  </component>
-</project>
